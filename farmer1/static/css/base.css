@@ -1,0 +1,18 @@
+body{
+  background-color: lightblue;
+}
+p{
+  color: green;
+}
+
+.manu .col-md-10{
+  background-color: lightgrey;
+}
+.manu .col-md-10 .man img{
+  /* border-radius: 50%; */
+  height: 79px;
+  width: 390px;
+}
+.manu .col-md-10 .man .ma{
+  align-content: center;
+}

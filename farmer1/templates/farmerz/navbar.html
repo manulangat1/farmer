@@ -1,0 +1,25 @@
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="{% url 'mkt'%}" class="navbar-brand">Home</a>
+          <a href="{% url 'sell'%}" class="navbar-brand">Sell your Produce</a>
+        </div>
+        <div class="navbar-center">
+        </div>
+        <div class="navbar-right">
+          <a href="{% url 'help'%}" class="navbar-brand">Talk to us</a>
+          <a href="/accounts/logout" class="navbar-brand">Log Out</a>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

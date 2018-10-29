@@ -1,0 +1,24 @@
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a href="{% url 'homep'%}" class="navbar-brand">Home</a>
+        </div>
+        <div class="navbar-center">
+        </div>
+        <div class="navbar-right">
+          <a href="/accounts/register/" class="navbar-brand">Register</a>
+          <a href="/accounts/login/" class="navbar-brand">Login</a>
+        </div>
+      </div>
+    </nav>
+  </body>
+</html>

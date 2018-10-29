@@ -1,0 +1,31 @@
+{% extends 'all/base.html'%}
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/base.css'%}">
+{% endblock %}
+{% block content %}
+<div class="ma">
+  {% for all3_item in all3 %}
+
+  <a href="{{all3_item.get_absolute_url}}">
+  <h1>{{all3_item.name}}</h1>
+  </a>
+  <!--Display news Article images  -->
+      <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+      <div class="man">
+        <img src="{{all3_item.pic.url}}" class="img-responsive" alt="Image">
+      </div>
+
+      <!-- </div> -->
+
+  <p>{{all3_item.pic}}</p>
+  <p>{{all3_item.text}}</p>
+  <p>{{all3_item.pub_date|timesince}}</p>
+  {% empty %}
+  <p>unavailable as at now.</p>
+  {% endfor %}
+</div>
+{% endblock %}

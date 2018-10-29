@@ -1,0 +1,23 @@
+{% extends 'farmerz/base.html'%}
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css'%}">
+{% endblock %}
+{% block content %}
+{% for all01_item in all01 %}
+<h1>{{all01_item.name}}</h1>
+<!--Display news Article images  -->
+    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+      <img src="{{all01_item.pic.url}}" class="img-responsive" alt="Image">
+    </div>
+
+<p>{{all01_item.pic}}</p>
+<p>{{all01_item.text}}</p>
+<p>{{all01_item.pub_date|timesince}}</p>
+{% empty %}
+<p>unavailable as at now.</p>
+{% endfor %}
+{% endblock %}

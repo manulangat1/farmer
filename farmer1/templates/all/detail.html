@@ -1,0 +1,11 @@
+{% extends 'all/base.html'%}
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/base.css'%}">
+{% endblock %}
+{% block content %}
+<p>hello</p>
+{% endblock %}

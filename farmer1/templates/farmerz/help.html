@@ -1,0 +1,15 @@
+{% extends 'farmerz/base.html'%}
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css'%}">
+{% endblock %}
+{% block content %}
+<form class="" action="{% url 'help'%}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form form%}
+  <button type="submit"  class="btn btn-primary" value="Submit">Submit</button>
+</form>
+{% endblock %}

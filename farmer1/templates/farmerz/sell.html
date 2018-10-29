@@ -1,0 +1,29 @@
+{% extends 'farmerz/base.html'%}
+{% load static %}
+{% load staticfiles %}
+{% load bootstrap3 %}
+{% block styles %}
+  {% bootstrap_css %}
+  <link rel="stylesheet" href="{% static 'css/home.css'%}">
+{% endblock %}
+{% block content %}
+<form class="" action="{% url 'sell'%}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {% bootstrap_form form%}
+  <button type="submit"  class="btn btn-primary" value="Submit">Submit</button>
+</form>
+<hr>
+{% for alls_item in alls %}
+<h1> owner :{{Sell.user.username}}</h1>
+<!--Display news Article images  -->
+    <!-- <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6"> -->
+      <img src="{{alls_item.pic.url}}" class="img-responsive" alt="Image">
+    <!-- </div> -->
+
+<p>{{alls_item.name}}</p>
+<p>{{alls_item.text}}</p>
+<p>{{alls_item.pub_date|timesince}}</p>
+{% empty %}
+<p>unavailable as at now.</p>
+{% endfor %}
+{% endblock %}
