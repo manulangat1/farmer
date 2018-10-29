@@ -4,3 +4,8 @@ body{
 /* .manu .col-md-10{
   background-color: darkgrey;
 } */
+.col-md-6  .images img{
+  width: 28.3%;
+  height: 45;
+  flex: auto;
+}
